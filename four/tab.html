@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #awa{ 
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <table id="awa">
+        <td>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+        </td>
+    </table>
+    <script>
+        var tab = document.getElementById("awa");        
+        for(var i = 1;i < 5;i++){
+            var r=tab.insertRow(i);
+            for(var j = 0; j < 5; j++){
+                r.insertCell(j).innetHTML="A";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url("屏幕截图\ 2023-10-26\ 104128.png"); /* 添加网页背景图的 URL */
+            background-size: cover;
+        }
+        #fang_kuang{
+            border: 5px solid black; 
+            margin: 200px 420px;
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            border-radius: 30px;
+            background-color: aqua;
+            background: rgba(255, 255, 255, 0.5); /* 设置表格透明度 */
+        }
+        #up_kuang{
+            width: 400px;
+            height: 100px;
+            margin: 0 auto;
+            text-align: center;
+            font-size:50px;
+        }
+        #zho_kuang{
+            width: 300px;
+            height: 155px;
+            margin: 0 auto;
+            text-align: center;
+            font-size:60px;
+        }
+        #down_kuang{
+            width: 400px;
+            height: 100px;
+            margin: 0 auto;
+            text-align: center;
+            font-size:50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="fang_kuang">
+        <div id="up_kuang"></div>
+        <div id="zho_kuang"></div>
+        <div id="down_kuang"></div>
+    </div>
+</body>
+    <script>
+    setTimeout("alert('萧山技师2215')",1000);
+    window.setInterval(gar_date, 1000);
+
+    function gar_date() {
+        var date = new Date();
+        document.getElementById("up_kuang").innerText = date.getFullYear() + "/" + (date.getMonth() + 1);
+        document.getElementById("zho_kuang").innerText = date.getDay();
+        document.getElementById("down_kuang").innerText = date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getSeconds();
+    }
+
+    </script>
+</html>

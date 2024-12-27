@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+    <script>
+        var n = 0;
+        var m = 0;
+        var num = Number(prompt("请输入循环的次数"))
+        for(var index = 0;index < num;index++)
+        {
+            var fen = prompt("请输入同学的分数");
+            if(fen >= 60)
+            {
+                n++;
+            }
+            else
+            {
+                m++;
+            }
+        }
+        alert("大于六十的人数:"+n
+        +"小于六十的人数"+m)
+    </script>
+</html>

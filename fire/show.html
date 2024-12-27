@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span id="show">show</span>
+    <script>
+        function show(){
+            var h = window.innerHeight;
+            var W = window.innerWidth;
+            document.getElementById("show").innerHTML=w+""+h;
+        }
+        window.onresize=function(){
+            show();
+        }
+    </script>
+</body>
+</html>

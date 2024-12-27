@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            height: 100px;
+            padding: 20px 126px;
+            font-size: 28px;
+            float: right;
+            border: 5px solid beige;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+    </div>
+</body>
+<script>
+    var time = document.getElementById("box");
+    var ks = new Date();
+    var msks = ks.getTime();
+    var js = msks + 60 * 60 * 1000;
+    function jsover(){
+        var now = new Date().getTime();
+        var syfz = Math.floor((js-now)/(1000*60));
+
+        var sym = Math.floor((js-now-syfz*1000*60)/1000);
+        if(syfz<5)
+            time.style.backgroundColor="red";
+        if(syfz<3)
+            time.style.backgroundColor="blue";
+        if(syfz<0){
+            time.innerHTML="考试结束";
+            time.style.height=100+'%';
+            time.style.width=100+'%';
+            clearInterval(timeID);
+        } else
+            time.innerHTML="离考试结束"+syfz+"分"+sym+"秒";
+    }
+    timeID=setInterval("jsover()",1000);
+</script>
+</html>

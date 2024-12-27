@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" onclick="WaW()">
+    <script>
+        function WaW(){
+            var h = screen.availHeight/2-250;
+            var w = screen.availWidth/2-250;
+            var a = window.open("","百度","width=500,height=470");
+            a.moveTo(w,h);
+            a.document.write("<div id="+"awa"+">2215</div>");
+            var H = a.innerHeight;
+            var qwq = a.document.getElementById("awa");
+            qwq.style.marginTop=H/2-100+"px";
+            qwq.style.marginBottom=H/2-100+"px";
+            qwq.style.width="200px";
+            qwq.style.height="200px";
+            qwq.style.border="1px red solid";
+            qwq.style.margin="auto";
+            qwq.style.textAlign="center";
+            qwq.style.lineHeight="150px";
+            window.close();
+        }
+    </script>
+</body>
+</html>

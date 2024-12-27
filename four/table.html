@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            width: 600px;
+            background-color: #d9ffdc;
+            text-align: center;
+        }
+        th{
+            background-color: #00a40c;
+            color: #fff;
+            padding: 5px;
+        }
+        td{
+            border-bottom: 1px dashed #817865;
+        }
+    </style>
+</head>
+<body>
+    <table id="list" border="0">
+        <caption><h2>我的购物车</h2></caption>
+        <tr>
+            <th><label><input id="all" type="checkbox" onclick="all_check()"/>全选</label></th>
+            <th>商品</th>
+            <th>描述</th>
+            <th>单价(元)</th>
+            <th>数量</th>
+        </tr>
+        <tr>
+            <td><input name="ic" type="checkbox" onclick="single_check()"/></td>
+            <td width="80"><img src=""></td>
+            <td width="170" align="left"><a>新款春装韩版长款两件套连衣裙套装长裙</a></td>
+            <td>699</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td><input name="ic" type="checkbox" onclick="single_check()"/></td>
+            <td width="80"><img src=""></td>
+            <td width="170" align="left"><a>新款女装夏修身高腰长款连衣裙女雪纺短袖裙名媛粉色收腰长裙</a></td>
+            <td>399</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td><input name="ic" type="checkbox" onclick="single_check()"/></td>
+            <td width="80"><img src=""></td>
+            <td width="170" align="left"><a>新款棉麻衬衫女短袖白色衬衣亚麻纯色百搭宽松上衣</a></td>
+            <td>268</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td colspan="4"><span onclick="removeRow()">取消选中</span></td><td><b></b>结算</td>
+        </tr>
+    </table>
+    <script>
+        var all=document.getElementById("all");
+        function all_check(){
+            var oInput=document.getElementsByName("ic");
+            for(var i = 0;i < oInput.length;i++)
+                oInput[i].checked=all.checked;
+        }
+        function single_check(){
+            var oInput = document.getElementsByName("ic");
+            var j = 0;
+            for(var i = 0;i < oInput.length;i++)
+                if(oInput[i].checked==true)
+                    j++;
+            if(j==oInput.length)
+                all.checked=true;
+            else
+                all.checked=false;
+        }
+        function removeRow(){
+            var cheObj=document.getElementsByName("ic");
+            var taObj=document.getElementById("list");
+            if(confirm("确定要删除吗?"))
+            for(var k=0;k<cheObj.length;k++){
+                if(cheObj[k].checked){
+                    taObj.deleteRow(k+1);
+                    k=-1;
+                } 
+                document.getElementById("all").checked=false;
+            }
+            var taObj=document.getElementById("list")
+            for(var k=0;k<taObj.rows;k++){
+                taObj.rows[k].onmouseover=function(){
+                    this.bgColor="#ddd";
+                }
+                taObj.rows[k].onmouseover=function(){
+                    this.bgColor="#d9ffdc";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

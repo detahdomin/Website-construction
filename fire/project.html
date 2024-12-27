@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #awa{
+            border: 1px red solid;
+            width: 300px;
+            height: 400px;
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+</head> 
+    <p id="awa">2215</p>
+    <script>
+        show()
+        function show(){
+            var h = window.innerHeight;
+            var W = window.innerWidth;
+            qwq=document.getElementById("awa");
+            qwq.style.marginTop=h/2-200+"px";
+            qwq.style.marginBottom=h/2-200+"px";
+        }
+        window.onresize=function(){
+            show();
+        }
+    </script>
+</body>
+</html>

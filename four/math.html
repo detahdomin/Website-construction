@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        #awa{
+            width: 400px;
+            height: 200px;
+            border: 10px solid red;
+            border-radius: 20px;
+            background-color: blue;
+            margin: 10px auto;
+            font-size: 50px;
+        }
+        button{width: 100px;height: 50px;}
+    </style>
+</head>
+<body>
+    <div id="awa">
+        张三三
+    </div>
+    <button onclick="awa()">开始点名</button>
+<script>
+        var namelist =  ["张三","历史","王五"];
+        var mytime = null;
+        var index = 0;
+        function show(){
+            var dm = document.getElementById("awa");
+            var num = Math.floor(Math.random()*namelist.length);
+            dm.innerHTML=namelist[num];
+            qaq=setTimeout("show()",20);
+        }        
+        function awa(){
+            index++;
+            if(index == 1)
+                show();
+            if(index == 2){
+                clearInterval(qaq);
+                index = 0;
+            }
+        }
+</script>
+</body>
+</html>

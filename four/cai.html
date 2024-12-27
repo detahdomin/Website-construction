@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" onclick="button()">
+</body>
+    <script>
+        function button(){
+            var num = Math.floor(Math.random()*100+1);
+            if(confirm("go!?:)"))
+                for(var i = 1;i <= 10;i++){
+                    var guess=prompt("你一共十次机会,请开始输入");
+                    try{
+                        if(guess ==""||guess==null) throw"值为空";
+                        if(isNaN(guess))throw"不是数字";
+                        if(guess>100)throw"太大,超出边界";
+                        if(guess<1)throw"太小,超出边界";
+                        if(guess==num){
+                            alert("猜对了");
+                            break;
+                        }
+                        if(guess<num)
+                            alert("你已经是第"+i+"输入,你数字猜小了");
+                        if(guess>num)
+                            alert("你已经是第"+i+"输入,你数字猜大了");
+                        if(i==10)
+                            alert("你已经没机会了,真遗憾");
+                        
+                    }
+                    catch(eer){
+                        alert("输入错误"+eer+'.');
+                        continue
+                    }
+                }
+            }
+        
+    </script>
+</html>

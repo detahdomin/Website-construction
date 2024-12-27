@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="awa">
+        
+    </div>
+<script>
+    var index = 0;
+    var Str = "";
+    while (1){
+        var shu = Math.floor(Math.random()*(11-1))+1;
+        if(Str.indexOf(""+shu) == -1){
+            Str += shu
+            index++
+            if(index == 5)
+                break;
+        }
+    }
+    for(var i = 0;i < 5;i++)
+        console.log("0"+Str[i]);
+    function qwq(){
+        var a = document.getElementById("awa")
+        a.innerHTML=""
+    }
+</script>
+</body>
+</html> 
